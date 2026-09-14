@@ -6,7 +6,16 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc --build",
-    "typecheck": "tsc --noEmit"
+    "codegen": "genql --schema ../schema/dist/schema.graphql --output src/generated",
+    "build": "tsup src/index.ts --format esm --out-dir dist --clean && tsc --emitDeclarationOnly",
+    "typecheck": "tsc --noEmit",
+    "test": "echo 'no tests: this package only re-exports genql-generated code, nothing of ours to unit test'",
+    "dev": "tsup src/index.ts --format esm --out-dir dist --watch"
+  },
+  "devDependencies": {
+    "@genql/cli": "^6.3.4",
+    "@gqlkit/schema": "workspace:*",
+    "@types/node": "^22.20.2",
+    "tsup": "^8.5.1"
   }
 }

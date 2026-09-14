@@ -1,10 +1,27 @@
 {
-  "name": "@gqlkit/cli",
+  "name": "create-gqlkit-app",
   "version": "0.0.0",
-  "private": true,
   "type": "module",
+  "bin": {
+    "create-gqlkit-app": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "templates",
+    "fragments"
+  ],
   "scripts": {
-    "build": "tsc --build",
-    "typecheck": "tsc --noEmit"
+    "build": "tsc --build && node dist/sync-templates.js",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test dist/smoke.test.js",
+    "prepack": "pnpm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "yaml": "^2.9.0"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.8.0",
+    "picocolors": "^1.1.1"
   }
 }

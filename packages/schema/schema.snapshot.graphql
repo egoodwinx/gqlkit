@@ -1,0 +1,45 @@
+type Comment {
+  author: User!
+  content: String!
+  createdAt: String!
+  id: ID!
+  post: Post!
+}
+
+input CreatePostInput {
+  authorId: String!
+  content: String!
+  title: String!
+}
+
+type Mutation {
+  createPost(input: CreatePostInput!): Post!
+}
+
+type Post {
+  author: User!
+  comments: [Comment!]!
+  content: String!
+  createdAt: String!
+  id: ID!
+  published: Boolean!
+  title: String!
+}
+
+type Query {
+  searchPosts(query: String!): [Post!]!
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+type User {
+  email: String!
+  id: ID!
+  name: String
+  postCount: Int!
+  posts: [Post!]!
+  role: Role!
+}

@@ -7,6 +7,19 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc --build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node --test dist/context.test.js",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@gqlkit/schema": "workspace:*",
+    "dotenv": "^17.4.2",
+    "graphql": "^17.0.2",
+    "graphql-yoga": "^5.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "tsx": "^4.23.13"
   }
 }

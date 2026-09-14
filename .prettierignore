@@ -1,3 +1,7 @@
 dist
 node_modules
 pnpm-lock.yaml
+.claude
+generated
+pothos-types.ts
+apps/cli/templates
