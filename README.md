@@ -19,14 +19,14 @@ That's it — you get a running GraphQL server backed by Postgres, a typed clien
 
 This repo is both the stack itself and the scaffolder that ships it. If you're working in this repo directly (rather than a project scaffolded by `create-gqlkit-app`), here's what's in it:
 
-| Path | What it is |
-| --- | --- |
-| [`packages/schema`](packages/schema) | Prisma schema + Pothos builder. Produces a typed `schema` export and a `schema.graphql` SDL build artifact. |
-| [`packages/server`](packages/server) | Thin GraphQL Yoga server — imports the built schema, wires up Prisma + DataLoader as request context. |
-| [`packages/client`](packages/client) | Typed client generated from the SDL via [Genql](https://genql.vercel.app/) — call your API with plain object literals, get inferred types back. |
-| [`apps/web`](apps/web) | Minimal example consumer of `packages/client`. |
-| [`apps/cli`](apps/cli) | The `create-gqlkit-app` scaffolder — copies the packages above into a new project and bootstraps it. |
-| [`docs/recipes`](docs/recipes) | Named, verified recipes for the changes you'll actually reach for: adding a resolver, adding auth, subscriptions, federation, ejecting codegen, swapping servers. |
+| Path                                 | What it is                                                                                                                                                        |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`packages/schema`](packages/schema) | Prisma schema + Pothos builder. Produces a typed `schema` export and a `schema.graphql` SDL build artifact.                                                       |
+| [`packages/server`](packages/server) | Thin GraphQL Yoga server — imports the built schema, wires up Prisma + DataLoader as request context.                                                             |
+| [`packages/client`](packages/client) | Typed client generated from the SDL via [Genql](https://genql.vercel.app/) — call your API with plain object literals, get inferred types back.                   |
+| [`apps/web`](apps/web)               | Minimal example consumer of `packages/client`.                                                                                                                    |
+| [`apps/cli`](apps/cli)               | The `create-gqlkit-app` scaffolder — copies the packages above into a new project and bootstraps it.                                                              |
+| [`docs/recipes`](docs/recipes)       | Named, verified recipes for the changes you'll actually reach for: adding a resolver, adding auth, subscriptions, federation, ejecting codegen, swapping servers. |
 
 ## Working in this repo
 
