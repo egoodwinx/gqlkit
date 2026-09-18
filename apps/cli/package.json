@@ -1,6 +1,6 @@
 {
   "name": "create-gqlkit-app",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "bin": {
     "create-gqlkit-app": "./dist/index.js"
