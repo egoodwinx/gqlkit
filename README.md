@@ -1,17 +1,17 @@
 # gqlkit
 
-A code-first GraphQL stack, wired end-to-end and ready to scaffold with one command.
+A code-first GraphQL stack, wired end-to-end and ready to scaffold.
 
 ```
 npx create-gqlkit-app my-app
 ```
 
-That's it — you get a running GraphQL server backed by Postgres, a typed client with full end-to-end type inference from your Prisma schema to your frontend, and no generated CRUD boilerplate to fight with.
+This creates a GraphQL server backed by Postgres, with a typed client with full end-to-end type inference from your Prisma schema to your frontend.
 
 ## Why this stack
 
 - **Code-first, not SDL-first.** Your GraphQL types are defined in TypeScript ([Pothos](https://pothos-graphql.dev/)), directly off your Prisma models. No hand-written `.graphql` type files to keep in sync.
-- **Standard primitives, no framework lock-in.** Prisma, Pothos, GraphQL Yoga, and Zod are all proven applications. The schema `builder`/`schema` object this stack produces is a plain, portable GraphQL schema — swap Yoga for Apollo Server, split it with federation, or eject the client codegen, without rewriting your resolvers. See [docs/recipes](docs/recipes) for verified diffs of each of these.
+- **Standard primitives, no framework lock-in.** Prisma, Pothos, GraphQL Yoga, and Zod. The schema `builder`/`schema` object this stack produces is a plain, portable GraphQL schema — swap Yoga for Apollo Server, split it with federation, or eject the client codegen, without rewriting your resolvers. See [docs/recipes](docs/recipes) for verified diffs of each of these.
 - **One validation layer.** Zod input schemas are shared between server-side validation and (optionally) client forms.
 - **Copy, don't depend.** `create-gqlkit-app` copies these packages as plain files into your new repo — your app has no runtime dependency on a `@gqlkit/*` package. It's a starting point, not a framework you're locked into.
 

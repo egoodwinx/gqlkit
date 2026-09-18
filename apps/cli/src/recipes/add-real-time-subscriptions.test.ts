@@ -1,13 +1,7 @@
 import assert from "node:assert/strict";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { test } from "node:test";
-import {
-  applyPatch,
-  runOk,
-  scaffoldProject,
-  startServer,
-  waitForServer,
-} from "../test-support.js";
+import { applyPatch, runOk, scaffoldProject, startServer, waitForServer } from "../test-support.js";
 
 // Verifies docs/recipes/add-real-time-subscriptions.md end to end: the
 // pubsub wiring, the object-ref gotcha, and that a publish actually reaches
