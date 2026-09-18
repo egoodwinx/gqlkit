@@ -7,6 +7,8 @@ pnpm --filter @gqlkit/server add @apollo/server
 pnpm --filter @gqlkit/server remove graphql-yoga
 ```
 
+pnpm's default build-script allowlist blocks `@apollo/protobufjs` (a transitive dependency of `@apollo/server`) from running its postinstall script, failing the install with `ERR_PNPM_IGNORED_BUILDS`. Approve it, either interactively (`pnpm approve-builds`) or inline on the same `add` command: `pnpm --filter @gqlkit/server add --allow-build=@apollo/protobufjs @apollo/server`.
+
 ## Diff
 
 `packages/server/src/index.ts` — the entire change:

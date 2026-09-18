@@ -14,6 +14,7 @@
     "build": "tsc --build && node dist/sync-templates.js",
     "typecheck": "tsc --noEmit",
     "test": "node --test dist/smoke.test.js",
+    "test:recipes": "node --test --test-concurrency=1 dist/recipes/*.test.js",
     "prepack": "pnpm run build"
   },
   "devDependencies": {

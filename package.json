@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "turbo run test",
+    "test:recipes": "turbo run test:recipes",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "eslint .",

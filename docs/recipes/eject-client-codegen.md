@@ -77,6 +77,9 @@ export function createClient(url: string) {
 `apps/web/src/index.ts` — the call site:
 
 ```diff
+-import { createClient } from "@gqlkit/client";
++import { createClient, SearchPostsDocument } from "@gqlkit/client";
+
 -const client = createClient({
 -  url: process.env["GRAPHQL_URL"] ?? "http://localhost:4000/graphql",
 -});

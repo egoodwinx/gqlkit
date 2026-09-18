@@ -57,6 +57,27 @@ This repo already has the seam for this: `Context.currentUserId` exists from Pha
 
 That header read is deliberately fake — it's there so this recipe is actually testable end to end without pulling in a specific auth provider. Real usage is the same three files: verify a session/JWT somewhere in `createContext`, set `currentUserId` from it, and everything downstream — `authScopes`, every `authScopes: { loggedIn: true }` field — already works.
 
+`packages/server/src/context.test.ts` — Phase 2's test calls `createContext()` with no arguments, which stops compiling once `createContext` requires a `YogaInitialContext`. Give it one (cast, since a real `YogaInitialContext` carries more than this test needs):
+
+```diff
++import type { YogaInitialContext } from "graphql-yoga";
+ import { createContext } from "./context.js";
+
++function fakeInitialContext(headers: Record<string, string> = {}): YogaInitialContext {
++  return { request: new Request("http://localhost", { headers }) } as YogaInitialContext;
++}
++
+ test("createContext returns a fresh object identity on every call", () => {
+-  assert.notEqual(createContext(), createContext());
++  assert.notEqual(createContext(fakeInitialContext()), createContext(fakeInitialContext()));
+ });
+
+ test("createContext defaults currentUserId to null", () => {
+-  assert.equal(createContext().currentUserId, null);
++  assert.equal(createContext(fakeInitialContext()).currentUserId, null);
+ });
+```
+
 ## Verify
 
 ```bash
