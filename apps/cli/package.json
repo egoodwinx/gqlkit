@@ -1,6 +1,6 @@
 {
   "name": "create-gqlkit-app",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Scaffold a code-first GraphQL stack (Prisma + Pothos + GraphQL Yoga, with a typed Genql client) into a new project.",
   "keywords": [
     "graphql",
