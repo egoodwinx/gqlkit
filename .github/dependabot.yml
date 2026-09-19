@@ -5,18 +5,18 @@
 
 version: 2
 updates:
-  - package-ecosystem: 'github-actions' # See documentation for possible values
-    directory: '/' # Location of package manifests
+  - package-ecosystem: "github-actions" # See documentation for possible values
+    directory: "/" # Location of package manifests
     schedule:
-      interval: 'daily'
+      interval: "daily"
     groups:
       actions-deps:
         patterns:
-          - '*'
-  - package-ecosystem: 'npm' # See documentation for possible values
-    directory: '/' # Location of package manifests
+          - "*"
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/" # Location of package manifests
     schedule:
-      interval: 'daily'
+      interval: "daily"
     versioning-strategy: increase-if-necessary
     cooldown:
       default-days: 3
