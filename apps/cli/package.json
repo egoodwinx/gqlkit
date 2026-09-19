@@ -1,6 +1,26 @@
 {
   "name": "create-gqlkit-app",
   "version": "0.1.0",
+  "description": "Scaffold a code-first GraphQL stack (Prisma + Pothos + GraphQL Yoga, with a typed Genql client) into a new project.",
+  "keywords": [
+    "graphql",
+    "cli",
+    "scaffold",
+    "create-app",
+    "prisma",
+    "pothos",
+    "graphql-yoga",
+    "typescript"
+  ],
+  "homepage": "https://github.com/egoodwinx/gqlkit#readme",
+  "bugs": "https://github.com/egoodwinx/gqlkit/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egoodwinx/gqlkit.git",
+    "directory": "apps/cli"
+  },
+  "license": "MIT",
+  "author": "Emily Goodwin",
   "type": "module",
   "bin": {
     "create-gqlkit-app": "./dist/index.js"
